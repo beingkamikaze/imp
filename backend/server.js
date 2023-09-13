@@ -8,6 +8,13 @@ import messageRoutes from "./routes/messageRoutes.js";
 import { v2 as cloudinary } from "cloudinary";
 import { app, server } from "./socket/socket.js";
 
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://imp-vr1o.vercel.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
 dotenv.config();
 
 connectDB();
