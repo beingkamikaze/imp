@@ -9,7 +9,7 @@ export default defineConfig({
     // Get rid of the CORS error
     proxy: {
       "/api": {
-        target: "https://imp-dusky.vercel.app/",
+        target: "https://imp-27o2.vercel.app//",
         changeOrigin: true,
         secure: false,
       },
