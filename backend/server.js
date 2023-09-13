@@ -15,9 +15,9 @@ connectDB();
 const PORT = process.env.PORT || 5000;
 
 cloudinary.config({
-	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-	api_key: process.env.CLOUDINARY_API_KEY,
-	api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 // Middlewares
@@ -30,4 +30,10 @@ app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/messages", messageRoutes);
 
-server.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+server.listen(PORT, () =>
+  console.log(`Server started at http://localhost:${PORT}`)
+);
