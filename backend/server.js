@@ -7,6 +7,7 @@ import postRoutes from "./routes/postRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import { v2 as cloudinary } from "cloudinary";
 import { app, server } from "./socket/socket.js";
+import cors from "cors";
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'https://imp-vr1o.vercel.app');
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
+app.use(cors());
 
 dotenv.config();
 
