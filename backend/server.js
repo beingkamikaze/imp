@@ -12,7 +12,7 @@ dotenv.config();
 
 connectDB();
 
-const PORT = process.env.PORT || imp - mu.vercel.app;
+const PORT = process.env.PORT || 5000;
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
